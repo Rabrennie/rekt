@@ -42,13 +42,21 @@ reRekt = function() {
 speak = function() {
   var text = currentText;
 
-  text = _.trim(text, '[x]');
+  text = text.split('[x]').join('');
 
-  text = text.split('REKT').join(' REKT ');
-  
+  text = text.split('REKT').join('rect');
   //temporary fixes
+  text = text.split('rekkit').join('wreck it');
   text = text.split('-').join(' ');
-  text = text.split('²').join(' squared ');
+
+  if (text.charCodeAt(8) == 178){
+    text = text.split('²').join('') + ' squared ';
+  }
+
+
+  text = text.toLowerCase();
+  
+  //console.log(text);
 
   meSpeak.speak(text);
 }
