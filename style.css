@@ -6,11 +6,23 @@ body,html{
   background-color:#fdfdfd;
 }
 
+/* Damn kids and their mobile telephones */
+@media screen and ( max-height: 480px ){
+    #rektText{
+      margin:30px 0;
+    }
+}
+@media screen and ( min-height: 800px ){
+    #rektText{
+      margin:200px 0;
+    }
+}
+
 #rektText{
   font-family: 'Lato', sans-serif;
   font-weight:300;
-  margin:200px 0;
   cursor: pointer;
+  height:70px;
 }
 
 #container{
