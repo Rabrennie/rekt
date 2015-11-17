@@ -12,13 +12,14 @@ $.ajax({
 }).done(function(data) {
   rektText = data.split('\n');
   rektText = _.slice(rektText, 1, rektText.length - 2);
-  init();
+  checkHash();
   new Clipboard('.btn');
   el.click(speak);
   $('#newRekt').click(reRekt);
+  $(window).on('hashchange', checkHash);
 });
 
-init = function() {
+checkHash = function() {
   if (window.location.hash) {
     pos = _.trim(window.location.hash, '#');
     if (rektText[pos]) {
@@ -36,8 +37,6 @@ init = function() {
 reRekt = function() {
   currentText = _.sample(rektText);
   window.location.hash = _.indexOf(rektText, currentText);
-  el.html(currentText);
-  speak();
 };
 
 speak = function() {
