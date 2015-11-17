@@ -73,9 +73,11 @@ button:focus{
 #info a{
   text-decoration:none;
   color:#686868;
+  border-bottom:1px solid #B9B9B9;
 }
 
 #info a:hover{
   text-decoration:none;
   color:#000000;
+  border-bottom-color: #4A4A4A;
 }
