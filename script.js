@@ -45,7 +45,10 @@ speak = function() {
   text = _.trim(text, '[x]');
 
   text = text.split('REKT').join(' REKT ');
+  
+  //temporary fixes
   text = text.split('-').join(' ');
+  text = text.split('²').join(' squared ');
 
   meSpeak.speak(text);
 }
